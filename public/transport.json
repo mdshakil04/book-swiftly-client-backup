@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+      "name": "Rikshaw",
+      "image": "https://i.ibb.co/KbBM3wQ/Rikshaw.jpg",
+      "badge": "Trending",
+      "description": "Rikshaw is a two-wheeler that is used for transportation. It is a two-wheeler that is used for transportation.",
+      "capacity": "Typically Seats 1-2 person",
+      "feature": "Open-air seating, pedal power transportation",
+      "price": 10
+    },
+    {
+        "id": 2,
+      "name": "Van",
+      "image": "https://i.ibb.co/6ZCd7Q8/Van.jpg",
+      "badge": "Trending",
+      "description": "Rikshaw is a two-wheeler that is used for transportation. It is a two-wheeler that is used for transportation.",
+      "capacity": "Typically Seats 2-4 person",
+      "feature": "Open-air seating, pedal power transportation",
+      "price": 20
+    },
+    {
+        "id": 3,
+      "name": "Gorur Gari",
+      "image": "https://i.ibb.co/qx9b0GP/Gorur-Gari.jpg",
+      "badge": "Trending",
+      "description": "Rikshaw is a two-wheeler that is used for transportation. It is a two-wheeler that is used for transportation.",
+      "capacity": "Typically Seats 4-5 person",
+      "feature": "Open-air seating, pedal power transportation",
+      "price": 30
+    },
+    {
+        "id": 4,
+      "name": "Boat",
+      "image": "https://i.ibb.co/dL5PNs2/Boat.webp",
+      "badge": "Trending",
+      "description": "Rikshaw is a two-wheeler that is used for transportation. It is a two-wheeler that is used for transportation.",
+      "capacity": "Typically Seats 8-10 person",
+      "feature": "Open-air seating, pedal power transportation",
+      "price": 50
+    }
+  ]
+  

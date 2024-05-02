@@ -1,0 +1,131 @@
+[
+    {
+      "id": 1,
+      "title": "Kacchi Briyani",
+      "image": "https://i.ibb.co/hKt1Gc0/Kacchi.jpg",
+      "description": "Made with Basmati rice and Beef",
+      "price": 250,
+      "category": "food"
+    },
+    {
+      "id": 2,
+      "title": "Mejbani Beef",
+      "image": "https://i.ibb.co/qmfcnjF/mezbani-beef.jpg",
+      "description": "Spicy beef curry cooked in traditional Bengali style",
+      "price": 200,
+      "category": "food"
+    },
+    {
+      "id": 3,
+      "title": "Rosmalai",
+      "image": "https://i.ibb.co/bQMKGNy/Ras-Malai-2.jpg",
+      "description": "A rich and creamy Bengali dessert made with milk and sugar",
+      "price": 150,
+      "category": "food"
+    },
+    {
+      "id": 4,
+      "title": "Malaikari",
+      "image": "https://i.ibb.co/wYdHrPf/Malaikari-8.jpg",
+      "description": "A flavorful Bengali fish curry cooked with coconut milk",
+      "price": 180,
+      "category": "food"
+    },
+    {
+      "id": 5,
+      "title": "Village Hut",
+      "image": "https://i.ibb.co/k8bMvRp/typical-village-hut.webp",
+      "description": "Experience rustic living in a traditional village hut",
+      "price": 100,
+      "category": "stay"
+    },
+    {
+      "id": 6,
+      "title": "Mud House",
+      "image": "https://i.ibb.co/0hdpsvx/Mud-House-Room.jpg",
+      "description": "Stay in a cozy mud house surrounded by nature",
+      "price": 120,
+      "category": "stay"
+    },
+    {
+      "id": 7,
+      "title": "Boat House",
+      "image": "https://i.ibb.co/1sXzD3J/Boat-House.webp",
+      "description": "Relax in a floating house on serene waters",
+      "price": 180,
+      "category": "stay"
+    },
+    {
+      "id": 8,
+      "title": "Tin House",
+      "image": "https://i.ibb.co/QN3XLDs/Jalalpr-2.jpg",
+      "description": "Modern comforts in a sustainable tin house",
+      "price": 150,
+      "category": "stay"
+    },
+    {
+      "id": 9,
+      "title": "Nabanna",
+      "image": "https://i.ibb.co/r69qkzb/Nobanno.jpg",
+      "description": "Celebrate the harvest festival with traditional songs, dances, and feasts",
+      "price": 0,
+      "category": "festivals"
+    },
+    {
+      "id": 10,
+      "title": "Pahela Falgun",
+      "image": "https://i.ibb.co/yW1swL4/Palgunjpg.webp",
+      "description": "Welcome the arrival of spring with colorful festivities and flower displays",
+      "price": 0,
+      "category": "festivals"
+    },
+    {
+      "id": 11,
+      "title": "Nowka Baich",
+      "image": "https://i.ibb.co/6b3dmMk/Nowka-baich.jpg",
+      "description": "Experience the traditional boat race held during festivals like Pohela Boishakh",
+      "price": 0,
+      "category": "festivals"
+    },
+    {
+      "id": 12,
+      "title": "Pahela Boishakh",
+      "image": "https://i.ibb.co/WGmH2wb/Boishakh.webp",
+      "description": "Celebrate the Bengali New Year with cultural events, parades, and street fairs",
+      "price": 0,
+      "category": "festivals"
+    },
+    {
+      "id": 13,
+      "title": "Haleem",
+      "image": "https://i.ibb.co/Cn0fTBR/Haleem.jpg",
+      "description": "A rich and flavorful stew made with meat, lentils, and spices",
+      "price": 200,
+      "category": "dishes"
+    },
+    {
+      "id": 14,
+      "title": "Morog Polaw",
+      "image": "https://i.ibb.co/rwWS2mJ/Morogpolaw.jpg",
+      "description": "Fragrant rice dish cooked with chicken, spices, and nuts",
+      "price": 180,
+      "category": "dishes"
+    },
+    {
+      "id": 15,
+      "title": "Bhuna Khichuri",
+      "image": "https://i.ibb.co/JKmrfSV/Bhuna-khichuri-recipe.jpg",
+      "description": "A hearty and comforting dish made with rice, lentils, and spices",
+      "price": 150,
+      "category": "dishes"
+    },
+    {
+      "id": 26,
+      "title": "Elish Polaw",
+      "image": "https://i.ibb.co/vY1dyCy/Ilish-pulao.jpg",
+      "description": "Delicious rice dish cooked with Hilsa fish, a Bengali delicacy",
+      "price": 250,
+      "category": "dishes"
+    }
+  ]
+  
