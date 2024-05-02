@@ -1,12 +1,39 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+// import React, { useContext } from 'react';
+// import { AuthContext } from './../../../../providers/AuthProvider';
+
+import Swal from "sweetalert2";
+import useAuth from "../../../../firebase/hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const SingleGuide = ({guide}) => {
     // eslint-disable-next-line react/prop-types, no-unused-vars
     const {name, image, experience, languages, availability, Price,contact ,expertise} = guide;
+    const {user } = useAuth();
+    const navigate = useNavigate();
+
     const handleAddToPay = guide => {
-      console.log(guide)
+        if(user && user.email){
+          // send cart to the database
+
+        }
+        else{
+          Swal.fire({
+            title: "You are not logged in",
+            text: "Please login first!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Log in!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+            // Sent to the login page
+            navigate('/login')
+            }
+          });
+        }
     }
     return (
         <div className="card lg:card-side mt-2 border-r-2 border-t-2 transform transition duration-500 hover:scale-105 ">
