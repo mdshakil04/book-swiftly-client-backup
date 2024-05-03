@@ -5,8 +5,10 @@ import { MdOutlineReviews } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import { MdOutlineTour } from "react-icons/md";
 import { MdEmojiTransportation } from "react-icons/md";
+import useCart from "../hooks/useCart";
 
 const Dashboard = () => {
+    const [cart] = useCart();
   return (
     <div className=" flex lg:gap-24">
         {/* Dashboard Sidebar */}
@@ -19,7 +21,7 @@ const Dashboard = () => {
                     <NavLink to='/dashboard/review'><span className=" text-xl"><MdOutlineReviews /></span> Review</NavLink>
                 </li>
                 <li className="">
-                    <NavLink to='/dashboard/cart'><span className=" text-xl"><TbBrandBooking /></span> My Bookings</NavLink>
+                    <NavLink to='/dashboard/cart'><span className=" text-xl"><TbBrandBooking /></span> My Bookings( {cart.length} )</NavLink>
                 </li>
                 <div className="divider"></div> 
                 <li className="">

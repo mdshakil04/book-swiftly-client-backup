@@ -36,7 +36,7 @@ const SingleGuide = ({guide}) => {
                 title: `${name}, added to Your Booking List`,
                 icon: "success",
                 showConfirmButton: false,
-                timer: 2000
+                timer: 1500
               });
               // Refetch cart to update the cart item count
               refetch()

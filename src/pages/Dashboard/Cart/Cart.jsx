@@ -1,10 +1,12 @@
 import {  FaTrashAlt } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const Cart = () => {
-  const [cart] = useCart();
+  const [cart, refetch] = useCart();
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  const axiosSecure = useAxiosSecure();
     // Delete cart data
     const handleDelete = id => {
         Swal.fire({
@@ -17,11 +19,19 @@ const Cart = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-            //   Swal.fire({
-            //     title: "Deleted!",
-            //     text: "Your file has been deleted.",
-            //     icon: "success"
-            //   });
+                axiosSecure.delete(`/carts/${id}`)
+                .then(res =>{
+                    // console.log(res)
+                    if(res.data.deletedCount > 0) {
+                        
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+                        refetch();
+                    }
+                })
             }
           });
     }
@@ -40,11 +50,11 @@ const Cart = () => {
           <table className="table">
             <thead>
               <tr>
-                <th><span className=" font-bold text-xl">Image</span></th>
-                <th><span className=" font-bold text-xl">Name</span></th>
-                <th><span className=" font-bold text-xl">Category</span></th>
-                <th><span className=" font-bold text-xl">Price</span></th>
-                <th><span className=" font-bold text-lg">Action</span></th>
+                <th><span className=" font-bold lg:text-xl">Image</span></th>
+                <th><span className=" font-bold lg:text-xl">Name</span></th>
+                <th><span className=" font-bold lg:text-xl">Category</span></th>
+                <th><span className=" font-bold lg:text-xl">Price</span></th>
+                <th><span className=" font-bold lg:text-xl">Action</span></th>
               </tr>
             </thead>
             <tbody>
@@ -63,13 +73,13 @@ const Cart = () => {
                     </div>
                   </td>
                   <td>
-                    <div className="font-bold text-2xl">{item.name}</div>
+                    <div className="font-bold lg:text-2xl">{item.name}</div>
                   </td>
                   <td>
                     <span className=" text-lg capitalize">{item.category}</span>
                   </td>
                   <td>
-                    $<span className=" font-bold text-lg">{item.price}</span>
+                    <span className=" font-bold text-lg">${item.price}</span>
                   </td>
                   <th>
                     <button 
