@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 import useCart from "../../../../hooks/useCart";
 
 const SingleTransport = ({ transport }) => {
-    const {name,image, description, badge, capacity,feature,price ,_id  } = transport;
+    const {name,image, description, badge, capacity,feature,price ,_id, category  } = transport;
     const {user} = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -21,7 +21,8 @@ const SingleTransport = ({ transport }) => {
             email : user.email,
             name,
             image,
-            price
+            price,
+            category
           }
           axiosSecure.post('/carts',tourTransport)
           .then( res => {
@@ -33,6 +34,7 @@ const SingleTransport = ({ transport }) => {
                 showConfirmButton: false,
                 timer: 2000
               });
+              refetch()
             }
           })
         }

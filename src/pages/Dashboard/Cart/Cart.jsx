@@ -1,10 +1,33 @@
+import {  FaTrashAlt } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const [cart] = useCart();
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    // Delete cart data
+    const handleDelete = id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+            //   Swal.fire({
+            //     title: "Deleted!",
+            //     text: "Your file has been deleted.",
+            //     icon: "success"
+            //   });
+            }
+          });
+    }
+
   return (
-    <div>
+    <div className=" border-2 p-4 rounded-xl">
       <div className=" my-12 grid grid-cols-1 lg:flex justify-evenly  p-2 bg-[#EAFBF7] rounded-xl">
         <h2 className="md:text-4xl">Total Items: {cart.length} </h2>
         <h2 className="md:text-4xl">Total Price: ${totalPrice} </h2>
@@ -17,40 +40,44 @@ const Cart = () => {
           <table className="table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Service ID</th>
-                <th>Price</th>
-                <th>Action</th>
+                <th><span className=" font-bold text-xl">Image</span></th>
+                <th><span className=" font-bold text-xl">Name</span></th>
+                <th><span className=" font-bold text-xl">Category</span></th>
+                <th><span className=" font-bold text-xl">Price</span></th>
+                <th><span className=" font-bold text-lg">Action</span></th>
               </tr>
             </thead>
             <tbody>
-              {
-                cart.map(item => <tr key={item._id}>
-                    <td>
-                      <div className="flex items-center gap-3">
-                        <div className="avatar">
-                          <div className="mask mask-squircle w-12 h-12">
-                            <img
-                              src={item.image}
-                              alt="Avatar Tailwind CSS Component"
-                            />
-                          </div>
-                        </div>
-                        <div>
-                          <div className="font-bold">{item.name}</div>
+              {cart.map((item) => (
+                <tr key={item._id}>
+                  <td>
+                    <div className="flex items-center gap-3">
+                      <div className="avatar">
+                        <div className="mask rounded-full w-20 h-20 ">
+                          <img
+                            src={item.image}
+                            alt="Avatar Tailwind CSS Component"
+                          />
                         </div>
                       </div>
-                    </td>
-                    <td>
-                      {item._id}
-                      <br />
-                    </td>
-                    <td>${item.price}</td>
-                    <th>
-                      <button className="btn btn-ghost btn-xs">details</button>
-                    </th>
-                  </tr>)
-              }
+                    </div>
+                  </td>
+                  <td>
+                    <div className="font-bold text-2xl">{item.name}</div>
+                  </td>
+                  <td>
+                    <span className=" text-lg capitalize">{item.category}</span>
+                  </td>
+                  <td>
+                    $<span className=" font-bold text-lg">{item.price}</span>
+                  </td>
+                  <th>
+                    <button 
+                    onClick={() => handleDelete(item._id)}
+                    className="btn btn-ghost btn-lg"><span className="  text-red-400"><FaTrashAlt></FaTrashAlt></span></button>
+                  </th>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
