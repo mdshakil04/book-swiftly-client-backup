@@ -5,7 +5,7 @@ import LocalFood from './LocalFood';
 const LocalFoods = () => {
     const [food, setFood] = useState([]);
     useEffect(()=>{
-        fetch('allServices.json')
+        fetch('http://localhost:5000/services')
         .then(res => res.json())
         .then(data => {
             const foodItems = data.filter(item => item.category === 'food')

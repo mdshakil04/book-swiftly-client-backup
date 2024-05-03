@@ -4,7 +4,7 @@ import Stay from './Stay';
 const StayVillageContainer = () => {
     const [stay, setStay] = useState([]);
     useEffect(()=>{
-        fetch('allServices.json')
+        fetch('http://localhost:5000/services')
         .then(res => res.json())
         .then(data => {
             const stayItems = data.filter(item => item.category === 'stay')

@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const LocalFood = ({ food }) => {
-  const { title, image, description, price } = food;
+  const { name, image, description, price } = food;
   return (
       <div className="card   bg-[#EAFBF7] shadow-xl transform transition duration-500 hover:scale-105 ">
         <figure>
@@ -14,7 +14,7 @@ const LocalFood = ({ food }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{title}</h2>
+          <h2 className="card-title">{name}</h2>
           <p>
            {description}
           </p>
