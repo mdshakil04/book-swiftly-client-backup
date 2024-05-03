@@ -5,7 +5,7 @@ import SingleGuide from "./SingleGuide";
 const TourGide = () => {
   const [guide , setGuide] = useState([]);
   useEffect(()=>{
-    fetch('mainServices.json')
+    fetch('http://localhost:5000/mainServices')
      .then(res => res.json())
      .then(data => {
       const tourGuide = data.filter(item =>item.category === 'guide')

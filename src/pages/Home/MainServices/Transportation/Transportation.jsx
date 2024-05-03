@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import SingleTransport from "./SingleTransport";
+import useAxiosSecure from "../../../../firebase/hooks/useAxiosSecure";
 const Transportation = () => {
   const [transport , setTransport] = useState([]);
+  // const axiosSecure = useAxiosSecure()
   useEffect(()=>{
-    fetch('mainServices.json')
+    fetch('http://localhost:5000/mainServices')
      .then(res => res.json())
      .then(data => {
       const transports = data.filter(item => item.category === 'transport')

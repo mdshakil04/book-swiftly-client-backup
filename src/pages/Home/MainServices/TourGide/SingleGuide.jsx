@@ -5,18 +5,39 @@
 
 import Swal from "sweetalert2";
 import useAuth from "../../../../firebase/hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../../../firebase/hooks/useAxiosSecure";
 
 const SingleGuide = ({guide}) => {
     // eslint-disable-next-line react/prop-types, no-unused-vars
-    const {name, image, experience, languages, availability, Price,contact ,expertise} = guide;
+    const {name, image, experience, languages, availability, Price,contact ,expertise, _id} = guide;
     const {user } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+    const axiosSecure = useAxiosSecure();
 
     const handleAddToPay = guide => {
         if(user && user.email){
           // send cart to the database
-
+          const tourGuide = {
+            guideId: _id,
+            email: user.email,
+            name,
+            image,
+            Price
+          }
+          axiosSecure.post('/carts', tourGuide)
+          .then( res => {
+            console.log(res.data)
+            if(res.data.insertedId){
+              Swal.fire({
+                title: `${name}, added to Your Booking List`,
+                icon: "success",
+                showConfirmButton: false,
+                timer: 2000
+              });
+            }
+          })
         }
         else{
           Swal.fire({
@@ -30,7 +51,7 @@ const SingleGuide = ({guide}) => {
           }).then((result) => {
             if (result.isConfirmed) {
             // Sent to the login page
-            navigate('/login')
+            navigate('/login', {state: {from: location}})
             }
           });
         }
@@ -41,7 +62,6 @@ const SingleGuide = ({guide}) => {
           <img src={image} alt="Album" />
         </figure>
         <div className="card-body ">
-          <h2 className="card-title text-3xl">Guide Profile</h2>
           <h2 className="text-3xl">Name: {name}</h2>
           <p>
             <span className=" underline font-bold">Experience: </span>{experience}
