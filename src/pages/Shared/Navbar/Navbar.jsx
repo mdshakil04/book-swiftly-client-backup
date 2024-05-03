@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import logo from "../../../assets/Images/logo/logo.png";
 import { TbBrandBooking } from "react-icons/tb";
+import useCart from "../../../hooks/useCart";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const [cart] = useCart();
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -70,10 +71,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-outline btn-primary">
+        <button className="btn btn-outline ">
         <span className=" text-3xl"><TbBrandBooking /></span>
           My Bookings
-          <div className="badge badge-secondary">+0</div>
+          <div className="badge text-xl">+{cart.length}</div>
         </button>
         {user ? (
           <>

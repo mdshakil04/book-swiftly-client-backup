@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import useCart from "../../../../hooks/useCart";
 
 const SingleGuide = ({guide}) => {
     // eslint-disable-next-line react/prop-types, no-unused-vars
@@ -13,8 +14,10 @@ const SingleGuide = ({guide}) => {
     const navigate = useNavigate();
     const location = useLocation();
     const axiosSecure = useAxiosSecure();
+    const [, refetch]= useCart();
 
-    const handleAddToPay = guide => {
+    // eslint-disable-next-line no-unused-vars
+    const handleBook = () => {
         if(user && user.email){
           // send cart to the database
           const tourGuide = {
@@ -34,6 +37,8 @@ const SingleGuide = ({guide}) => {
                 showConfirmButton: false,
                 timer: 2000
               });
+              // Refetch cart to update the cart item count
+              refetch()
             }
           })
         }
@@ -77,7 +82,7 @@ const SingleGuide = ({guide}) => {
             <span className=" underline font-bold">Contact: </span>{contact}
           </p>
           <p><span className=' underline font-bold'>Price :</span> $<span className=' text-red-600'>{Price}</span> </p>
-          <button onClick={() => handleAddToPay(guide)} className=" btn lg:w-1/6 btn-outline btn-info hover:shadow-lg hover:shadow-blue-400">Explore Tours</button>
+          <button onClick={handleBook} className=" btn lg:w-1/6 btn-outline btn-info hover:shadow-lg hover:shadow-blue-400">Explore Tours</button>
         </div>
       </div>
     );
