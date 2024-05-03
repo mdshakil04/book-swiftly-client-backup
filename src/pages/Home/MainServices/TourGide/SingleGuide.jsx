@@ -9,7 +9,7 @@ import useCart from "../../../../hooks/useCart";
 
 const SingleGuide = ({guide}) => {
     // eslint-disable-next-line react/prop-types, no-unused-vars
-    const {name, image, experience, languages, availability, Price,contact ,expertise, _id} = guide;
+    const {name, image, experience, languages, availability, price,contact ,expertise, _id} = guide;
     const {user } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -25,7 +25,7 @@ const SingleGuide = ({guide}) => {
             email: user.email,
             name,
             image,
-            Price
+            price
           }
           axiosSecure.post('/carts', tourGuide)
           .then( res => {
@@ -81,7 +81,7 @@ const SingleGuide = ({guide}) => {
           <p>
             <span className=" underline font-bold">Contact: </span>{contact}
           </p>
-          <p><span className=' underline font-bold'>Price :</span> $<span className=' text-red-600'>{Price}</span> </p>
+          <p><span className=' underline font-bold'>Price :</span> $<span className=' text-red-600'>{price}</span> </p>
           <button onClick={handleBook} className=" btn lg:w-1/6 btn-outline btn-info hover:shadow-lg hover:shadow-blue-400">Explore Tours</button>
         </div>
       </div>

@@ -9,7 +9,7 @@
       "availability": "Flexible scheduling, customized tours available",
       "contact": "brandonEich@example.com",
       "category" : "guide",
-      "Price": 120
+      "price": 120
     },
     {
         "key": 2,
@@ -21,7 +21,7 @@
       "availability": "Flexible scheduling, customized tours available",
       "contact": "DawightMerriman@example.com",
       "category" : "guide",
-      "Price": 100
+      "price": 100
     },
     {
         "key": 3,
@@ -33,7 +33,7 @@
       "availability": "Flexible scheduling, customized tours available",
       "contact": "GuidoVan@example.com",
       "category" : "guide",
-      "Price": 110
+      "price": 110
     },
     {
         "key": 4,
@@ -45,7 +45,7 @@
       "availability": "Flexible scheduling, customized tours available",
       "contact": "JordanWalke@example.com",
       "category" : "guide",
-      "Price": 180
+      "price": 180
     },
     {
         "id": 5,

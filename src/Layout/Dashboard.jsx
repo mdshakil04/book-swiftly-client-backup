@@ -8,9 +8,9 @@ import { MdEmojiTransportation } from "react-icons/md";
 
 const Dashboard = () => {
   return (
-    <div className=" flex">
+    <div className=" flex lg:gap-24">
         {/* Dashboard Sidebar */}
-        <div className=" w-64 min-h-screen bg-[#EAFBF7]">
+        <div className=" lg:w-64 min-h-screen bg-[#EAFBF7]">
             <ul className=" menu p-4">
                 <li className="">
                     <NavLink to='/dashboard/reservation'><span className=" text-xl"><TbCalendar /></span> Reservation</NavLink>
@@ -37,7 +37,7 @@ const Dashboard = () => {
             </ul>
         </div>
         {/* Dashboard Content */}
-        <div className=" flex-1">
+        <div className=" flex-1 p-8">
             <Outlet></Outlet>
         </div>
     </div>
