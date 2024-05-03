@@ -71,11 +71,13 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-outline ">
-        <span className=" text-3xl"><TbBrandBooking /></span>
+       <Link to="/dashboard/cart">
+        <button className="btn btn-outline btn-primary">
+          <span className=" text-3xl"><TbBrandBooking /></span>
           My Bookings
-          <div className="badge text-xl">+{cart.length}</div>
+          <div className="badge badge-secondary">+{cart.length}</div>
         </button>
+       </Link>
         {user ? (
           <>
             <details className=" flex items-center gap-2 dropdown flex-none">

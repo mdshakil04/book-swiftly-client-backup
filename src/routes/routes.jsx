@@ -11,7 +11,7 @@ import ReactTabs from "../pages/Home/Tabs/ReactTabs";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 // import TopServices from "../pages/Home/TopServices/TopServices";
 import Error from "../pages/Error/Error";
-import Services from "../pages/Home/TopServices/Services";
+// import Services from "../pages/Home/TopServices/Services";
 import MainServices from "../pages/Home/MainServices/MainServices";
 import TourGide from "../pages/Home/MainServices/TourGide/TourGide";
 import Transportation from "../pages/Home/MainServices/Transportation/Transportation";
@@ -20,6 +20,8 @@ import TopServices from "../pages/Home/TopServices/TopServices";
 import StayVillageContainer from "../pages/Home/TopServices/StayVillage/StayVillageContainer";
 import FestivalContainer from "../pages/Home/TopServices/FestivalContainer/FestivalContainer";
 import DishesContainer from "../pages/Home/TopServices/DishesContainer/DishesContainer";
+import Dashboard from "../Layout/Dashboard";
+import Cart from "../pages/Dashboard/Cart/Cart";
 // import ReactTabs from "../pages/Home/Tabs/ReactTabs";
   export const router = createBrowserRouter([
     {
@@ -81,4 +83,14 @@ import DishesContainer from "../pages/Home/TopServices/DishesContainer/DishesCon
         }
       ]
     },
+    {
+      path: 'dashboard',
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path: 'cart',
+          element:<Cart></Cart>
+        }
+      ]
+    }
   ]);
