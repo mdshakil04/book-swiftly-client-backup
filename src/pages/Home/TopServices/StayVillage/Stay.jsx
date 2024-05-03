@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const Stay = ({ stay }) => {
   // eslint-disable-next-line react/prop-types
-  const { title, image, description, price } = stay;
+  const { name, image, description, price } = stay;
   return (
     <div className="card   bg-[#EAFBF7] shadow-xl transform transition duration-500 hover:scale-105 ">
       <figure>
         <img className=" h-[280px]" src={image} alt="Tour-image" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{title}</h2>
+        <h2 className="card-title">{name}</h2>
         <p>{description}</p>
         <div className="card-actions justify-end">
           <p>
