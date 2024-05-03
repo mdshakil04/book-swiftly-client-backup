@@ -3,7 +3,7 @@
 const Cart = () => {
     return (
         <div>
-            <h2 className="text-6xl">My cart</h2>
+            <h2 className="text-6xl text-center">My Bookings</h2>
         </div>
     );
 };
