@@ -2,7 +2,7 @@
 
 const Cart = () => {
     return (
-        <div>
+        <div className=" my-12">
             <h2 className="text-6xl text-center">My Bookings</h2>
         </div>
     );
