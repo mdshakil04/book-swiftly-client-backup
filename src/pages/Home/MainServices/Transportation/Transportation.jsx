@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import SingleTransport from "./SingleTransport";
-import useAxiosSecure from "../../../../firebase/hooks/useAxiosSecure";
 const Transportation = () => {
   const [transport , setTransport] = useState([]);
   // const axiosSecure = useAxiosSecure()

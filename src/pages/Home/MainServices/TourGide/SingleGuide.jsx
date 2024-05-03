@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-// import React, { useContext } from 'react';
-// import { AuthContext } from './../../../../providers/AuthProvider';
+
 
 import Swal from "sweetalert2";
-import useAuth from "../../../../firebase/hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
-import useAxiosSecure from "../../../../firebase/hooks/useAxiosSecure";
+import useAuth from "../../../../hooks/useAuth";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const SingleGuide = ({guide}) => {
     // eslint-disable-next-line react/prop-types, no-unused-vars
