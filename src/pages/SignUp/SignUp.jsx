@@ -5,6 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { FcGoogle } from "react-icons/fc";
 
 const SignUp = () => {
   const {
@@ -31,8 +32,8 @@ const SignUp = () => {
           };
           axiosPublic.post("/users", userInfo).then((res) => {
             if (res.data.insertedId) {
-              console.log("User Added to database")
-              reset()
+              console.log("User Added to database");
+              reset();
               Swal.fire({
                 title: "User Updated Successfully!",
                 icon: "success",
@@ -40,7 +41,6 @@ const SignUp = () => {
               navigate("/");
             }
           });
-          
         })
         .catch((error) => console(error));
     });
@@ -148,12 +148,22 @@ const SignUp = () => {
                   )}
                   {/* ---------Password validation--------- */}
                 </div>
-                <div className="form-control mt-6">
-                  <input
-                    className="btn  btn-primary hover:shadow-lg hover:shadow-blue-400"
-                    type="submit"
-                    value="Sign Up"
-                  />
+                <div className="form-control mt-6 grid grid-cols-2">
+                  <div className="">
+                    <input
+                      className="btn   btn-primary btn-wide hover:shadow-lg hover:shadow-blue-400"
+                      type="submit"
+                      value="Sign Up"
+                    />
+                  </div> 
+                  {/*  onClick={handleGoogleSignIn}  */}
+                  <div className="">
+                    <button className="btn  btn-wide btn-success text-lg hover:shadow-lg hover:shadow-green-400">
+                      {" "}
+                      <FcGoogle />
+                      Sign Up with Google
+                    </button>
+                  </div>
                 </div>
               </form>
               <p className=" ml-8 mb-4 text-red-700 font-bold">

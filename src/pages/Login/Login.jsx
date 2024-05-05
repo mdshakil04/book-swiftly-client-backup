@@ -17,7 +17,7 @@ const Login = () => {
   // --------------Google sign in--------------
   const auth = getAuth(app)
   const provider = new GoogleAuthProvider()
-  const handleGoogleSignIn = () =>{
+  const handleGoogleSignIn = () => {
     // console.log("Google Mama is Comming")
     signInWithPopup(auth, provider)
     .then(result => {
@@ -110,7 +110,8 @@ const Login = () => {
                   />
                 </div>
                 <div className="form-control mt-6 ">
-                  <button className="btn  btn-info hover:shadow-lg hover:shadow-blue-400 text-lg mb-4 text-white font-bold">Log in</button>
+                  <button className="btn  btn-info  hover:shadow-lg hover:shadow-blue-400 text-lg mb-4  font-bold">Log in</button>
+                  {/* <div className="divider"></div>  */}
                  <div className=" grid md:grid-cols-2 gap-2">
                   <button onClick={handleGoogleSignIn} className="btn btn-success  mt-2 text-lg hover:shadow-lg hover:shadow-green-400"> <FcGoogle />Log in with Google</button>
                   <button onClick={handleFacebookSignIn} className="btn btn-primary  mt-2 text-lg hover:shadow-lg hover:shadow-blue-400"> <FaFacebook />Log in with Facebook</button>
