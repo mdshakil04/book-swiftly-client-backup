@@ -32,6 +32,12 @@ const Dashboard = () => {
           <li className="">
             <NavLink to="/dashboard/reservation">
               <span className=" text-xl">
+              <TbHome />
+              </span>{" "}
+              User Home
+            </NavLink>
+            <NavLink to="/dashboard/reservation">
+              <span className=" text-xl">
                 <TbCalendar />
               </span>{" "}
               Reservation
