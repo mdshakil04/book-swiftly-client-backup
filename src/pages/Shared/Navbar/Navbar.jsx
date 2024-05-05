@@ -82,11 +82,11 @@ const Navbar = () => {
           <>
             <details className=" flex items-center gap-2 dropdown flex-none">
               <summary className="btn">
-                <div className=" avatar">
+                {/* <div className=" avatar">
                   <div className="md:w-16 w-12 rounded-full">
                     <img src={user?.photoURL} />
                   </div>
-                </div>
+                </div> */}
                 <span className=" font-bold md:text-lg ">
                   {user?.displayName}
                 </span>

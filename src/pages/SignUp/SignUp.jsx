@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SignUp = () => {
   const {
@@ -14,6 +15,7 @@ const SignUp = () => {
   } = useForm();
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password).then((result) => {
@@ -22,13 +24,23 @@ const SignUp = () => {
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
           // console.log("user profile info updated");
-          
-          reset;
-          Swal.fire({
-            title: "User Updated Successfully!",
-            icon: "success",
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+            photoURL: data.photoURL,
+          };
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if (res.data.insertedId) {
+              console.log("User Added to database")
+              reset()
+              Swal.fire({
+                title: "User Updated Successfully!",
+                icon: "success",
+              });
+              navigate("/");
+            }
           });
-         navigate('/')
+          
         })
         .catch((error) => console(error));
     });
@@ -41,8 +53,12 @@ const SignUp = () => {
         <title> Book Swiftly | Sign Up</title>
       </Helmet>
       <div>
-        <div style={{backgroundImage: 'url(https://i.ibb.co/wSk1c2x/signup.jpg)'}} className="hero  min-h-screen">
-       
+        <div
+          style={{
+            backgroundImage: "url(https://i.ibb.co/wSk1c2x/signup.jpg)",
+          }}
+          className="hero  min-h-screen"
+        >
           <div className=" hero hero-content ">
             <div className="  w-1/2 ">
               <form onSubmit={handleSubmit(onSubmit)} className="">
@@ -64,7 +80,9 @@ const SignUp = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-white text-xl">Photo URL</span>
+                    <span className="label-text text-white text-xl">
+                      Photo URL
+                    </span>
                   </label>
                   <input
                     {...register("photoURL", { required: true })}
@@ -97,7 +115,9 @@ const SignUp = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text text-white text-xl">Password</span>
+                    <span className="label-text text-white text-xl">
+                      Password
+                    </span>
                   </label>
                   <input
                     {...register("password", {
