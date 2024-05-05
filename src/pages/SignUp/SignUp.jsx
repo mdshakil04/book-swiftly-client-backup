@@ -21,7 +21,8 @@ const SignUp = () => {
       console.log(loggedUser);
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
-          console.log("user profile info updated");
+          // console.log("user profile info updated");
+          
           reset;
           Swal.fire({
             title: "User Updated Successfully!",
