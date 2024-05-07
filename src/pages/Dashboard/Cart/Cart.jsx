@@ -19,15 +19,15 @@ const Cart = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, Cancel it!",
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/carts/${id}`).then((res) => {
           // console.log(res)
           if (res.data.deletedCount > 0) {
             Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
+              title: "Canceled!",
+              text: "Your booking has been canceled.",
               icon: "success",
             });
             refetch();
@@ -41,7 +41,7 @@ const Cart = () => {
     <div>
       <div className="  p-4 rounded-xl">
         <div className=" my-12 grid grid-cols-1 lg:flex justify-evenly  p-2 bg-[#EAFBF7] rounded-xl">
-          <h2 className="md:text-4xl">Total Items: {cart.length} </h2>
+          <h2 className="md:text-4xl">Total Bookings: {cart.length} </h2>
           <h2 className="md:text-4xl">Total Price: ${totalPrice} </h2>
           <button className="btn lg:w-1/6 btn-outline btn-info hover:shadow-lg hover:shadow-blue-400">
             Pay Now
@@ -98,10 +98,9 @@ const Cart = () => {
                     <th>
                       <button
                         onClick={() => handleDelete(item._id)}
-                        className="btn btn-ghost btn-lg"
-                      >
+                        className="btn btn-error btn-outline"
+                      >Cancel Booking
                         <span className="  text-red-400">
-                          <FaTrashAlt></FaTrashAlt>
                         </span>
                       </button>
                     </th>
