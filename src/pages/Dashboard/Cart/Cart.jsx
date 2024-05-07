@@ -39,7 +39,7 @@ const Cart = () => {
 
   return (
     <div>
-      <div className=" border-2 p-4 rounded-xl">
+      <div className="  p-4 rounded-xl">
         <div className=" my-12 grid grid-cols-1 lg:flex justify-evenly  p-2 bg-[#EAFBF7] rounded-xl">
           <h2 className="md:text-4xl">Total Items: {cart.length} </h2>
           <h2 className="md:text-4xl">Total Price: ${totalPrice} </h2>
