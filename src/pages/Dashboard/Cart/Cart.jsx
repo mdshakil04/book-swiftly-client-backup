@@ -39,7 +39,7 @@ const Cart = () => {
   return (
     <div>
       <div className="  p-4 rounded-xl">
-        <div className=" my-12 grid grid-cols-1 lg:flex justify-evenly  p-2 bg-[#EAFBF7] rounded-xl">
+        <div className=" my-12 grid grid-cols-1 lg:flex justify-evenly  p-2 border ">
           <h2 className="md:text-4xl">Total Bookings: {cart.length} </h2>
           <h2 className="md:text-4xl">Total Price: ${totalPrice} </h2>
           <button className="btn lg:w-1/6 btn-outline btn-info hover:shadow-lg hover:shadow-blue-400">
@@ -49,7 +49,7 @@ const Cart = () => {
         <div>
           <div className="overflow-x-auto">
             <table className="table">
-              <thead>
+              <thead className=" bg-[#EAFBF7] rounded-xl">
                 <tr>
                   <th>
                     <span className=" font-bold lg:text-xl">Image</span>
