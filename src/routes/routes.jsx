@@ -9,9 +9,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import ReactTabs from "../pages/Home/Tabs/ReactTabs";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
-// import TopServices from "../pages/Home/TopServices/TopServices";
 import Error from "../pages/Error/Error";
-// import Services from "../pages/Home/TopServices/Services";
 import MainServices from "../pages/Home/MainServices/MainServices";
 import TourGide from "../pages/Home/MainServices/TourGide/TourGide";
 import Transportation from "../pages/Home/MainServices/Transportation/Transportation";
@@ -22,7 +20,6 @@ import FestivalContainer from "../pages/Home/TopServices/FestivalContainer/Festi
 import DishesContainer from "../pages/Home/TopServices/DishesContainer/DishesContainer";
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../pages/Dashboard/Cart/Cart";
-// import ReactTabs from "../pages/Home/Tabs/ReactTabs";
   export const router = createBrowserRouter([
     {
       path: "/",

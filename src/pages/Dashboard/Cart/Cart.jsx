@@ -1,9 +1,8 @@
-import { FaTrashAlt } from "react-icons/fa";
+// import { FaTrashAlt } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-// import { useContext } from "react";
-// import { AuthContext } from "../../../providers/AuthProvider";
+import { MdFreeCancellation } from "react-icons/md";
 
 const Cart = () => {
 //   const { user } = useContext(AuthContext);
@@ -70,7 +69,7 @@ const Cart = () => {
                 </tr>
               </thead>
               <tbody>
-                {cart.map((item) => (
+                {cart.map((item)    => (
                   <tr key={item._id}>
                     <td>
                       <div className="flex items-center gap-3">
@@ -99,9 +98,9 @@ const Cart = () => {
                       <button
                         onClick={() => handleDelete(item._id)}
                         className="btn btn-error btn-outline"
-                      >Cancel Booking
-                        <span className="  text-red-400">
-                        </span>
+                      > <span className=" text-xl ">
+                      <MdFreeCancellation />
+                      </span>Cancel Booking
                       </button>
                     </th>
                   </tr>
