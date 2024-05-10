@@ -71,11 +71,6 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/dashboard/cart">
-          <button className="btn btn-outline btn-primary lg:mr-4">
-            My Bookings
-          </button>
-        </Link>
         {user ? (
           <>
             <div className=" avatar">
@@ -91,10 +86,15 @@ const Navbar = () => {
               </summary>
               <div className="  relative z-10 ">
                 <ul className="  menu menu-horizontal px-1  absolute">
+                  <Link to="/dashboard/cart">
+                    <button className="btn btn-accent lg:mr-4">
+                      My Bookings
+                    </button>
+                  </Link>
                   <li className="">
                     <button
                       onClick={handleLogOut}
-                      className="btn btn-warning  text-white"
+                      className="btn btn-warning mt-2  text-white"
                     >
                       LogOut
                     </button>

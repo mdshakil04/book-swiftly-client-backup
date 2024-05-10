@@ -1,5 +1,8 @@
+/* eslint-disable no-unused-vars */
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
-
+const stripePromise = loadStripe('')
 const Payment = () => {
   return (
     <div>
@@ -7,7 +10,9 @@ const Payment = () => {
         Payment
       </h1>
       <div>
-        
+        <Elements stripe={stripePromise}>
+
+        </Elements>
       </div>
     </div>
   );
