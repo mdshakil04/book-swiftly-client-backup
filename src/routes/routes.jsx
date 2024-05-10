@@ -20,6 +20,7 @@ import FestivalContainer from "../pages/Home/TopServices/FestivalContainer/Festi
 import DishesContainer from "../pages/Home/TopServices/DishesContainer/DishesContainer";
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../pages/Dashboard/Cart/Cart";
+import Payment from "../pages/Dashboard/Payment/Payment";
   export const router = createBrowserRouter([
     {
       path: "/",
@@ -87,6 +88,10 @@ import Cart from "../pages/Dashboard/Cart/Cart";
         {
           path: 'cart',
           element:<Cart></Cart>
+        },
+        {
+          path:'payment',
+          element:<Payment></Payment>
         }
       ]
     }

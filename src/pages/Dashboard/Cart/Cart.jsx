@@ -3,9 +3,10 @@ import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { MdFreeCancellation } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-//   const { user } = useContext(AuthContext);
+  //   const { user } = useContext(AuthContext);
   const [cart, refetch] = useCart();
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
   const axiosSecure = useAxiosSecure();
@@ -42,9 +43,12 @@ const Cart = () => {
         <div className=" my-12 grid grid-cols-1 lg:flex justify-evenly  p-2 border ">
           <h2 className="md:text-4xl">Total Bookings: {cart.length} </h2>
           <h2 className="md:text-4xl">Total Price: ${totalPrice} </h2>
-          <button className="btn lg:w-1/6 btn-outline btn-info hover:shadow-lg hover:shadow-blue-400">
+          <Link
+            to="/dashboard/payment"
+            className="btn lg:w-1/6 btn-outline btn-info hover:shadow-lg hover:shadow-blue-400"
+          >
             Pay Now
-          </button>
+          </Link>
         </div>
         <div>
           <div className="overflow-x-auto">
@@ -69,7 +73,7 @@ const Cart = () => {
                 </tr>
               </thead>
               <tbody>
-                {cart.map((item)    => (
+                {cart.map((item) => (
                   <tr key={item._id}>
                     <td>
                       <div className="flex items-center gap-3">
@@ -98,9 +102,12 @@ const Cart = () => {
                       <button
                         onClick={() => handleDelete(item._id)}
                         className="btn btn-error btn-outline"
-                      > <span className=" text-xl ">
-                      <MdFreeCancellation />
-                      </span>Cancel Booking
+                      >
+                        {" "}
+                        <span className=" text-xl ">
+                          <MdFreeCancellation />
+                        </span>
+                        Cancel Booking
                       </button>
                     </th>
                   </tr>
