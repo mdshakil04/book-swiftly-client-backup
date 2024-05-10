@@ -71,30 +71,30 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-       <Link to="/dashboard/cart">
-        <button className="btn btn-outline btn-primary lg:mr-4">
-          My Bookings
-        </button>
-       </Link>
+        <Link to="/dashboard/cart">
+          <button className="btn btn-outline btn-primary lg:mr-4">
+            My Bookings
+          </button>
+        </Link>
         {user ? (
           <>
+            <div className=" avatar">
+              <div className="md:w-16 w-12 rounded-full">
+                <img src={user?.photoURL} />
+              </div>
+            </div>
             <details className=" flex items-center gap-2 dropdown flex-none">
-              <summary className="btn">
-                {/* <div className=" avatar">
-                  <div className="md:w-16 w-12 rounded-full">
-                    <img src={user?.photoURL} />
-                  </div>
-                </div> */}
+              <summary className=" btn">
                 <span className=" font-bold md:text-lg ">
                   {user?.displayName}
                 </span>
               </summary>
-              <div className=" ">
-                <ul className="  menu menu-horizontal px-1 ">
-                  <li>
+              <div className="  relative z-10 ">
+                <ul className="  menu menu-horizontal px-1  absolute">
+                  <li className="">
                     <button
                       onClick={handleLogOut}
-                      className="btn btn-warning btn-outline text-white"
+                      className="btn btn-warning  text-white"
                     >
                       LogOut
                     </button>
