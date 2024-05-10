@@ -38,12 +38,11 @@ const Cart = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="  p-4 rounded-xl">
-        <div className=" my-12 grid grid-cols-1 lg:flex justify-evenly  p-2 border ">
+        <div className=" my-12 grid grid-cols-1 lg:flex justify-evenly  p-2 border w-auto ">
           <h2 className="md:text-4xl">Total Bookings: {cart.length} </h2>
           <h2 className="md:text-4xl">Total Price: ${totalPrice} </h2>
-
           {cart.length ? (
             <Link to="/dashboard/payment">
               <button className="btn  btn-outline btn-info hover:shadow-lg hover:shadow-blue-400">
@@ -56,7 +55,7 @@ const Cart = () => {
             </button>
           )}
         </div>
-        <div>
+        <div className="">
           <div className="overflow-x-auto">
             <table className="table">
               <thead className=" bg-[#EAFBF7] rounded-xl">
