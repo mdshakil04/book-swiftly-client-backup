@@ -43,12 +43,18 @@ const Cart = () => {
         <div className=" my-12 grid grid-cols-1 lg:flex justify-evenly  p-2 border ">
           <h2 className="md:text-4xl">Total Bookings: {cart.length} </h2>
           <h2 className="md:text-4xl">Total Price: ${totalPrice} </h2>
-          <Link
-            to="/dashboard/payment"
-            className="btn lg:w-1/6 btn-outline btn-info hover:shadow-lg hover:shadow-blue-400"
-          >
-            Pay Now
-          </Link>
+
+          {cart.length ? (
+            <Link to="/dashboard/payment">
+              <button className="btn  btn-outline btn-info hover:shadow-lg hover:shadow-blue-400">
+                Pay Now
+              </button>
+            </Link>
+          ) : (
+            <button disabled className="btn lg:w-1/6 btn-outline btn-info hover:shadow-lg hover:shadow-blue-400">
+              Pay Now
+            </button>
+          )}
         </div>
         <div>
           <div className="overflow-x-auto">

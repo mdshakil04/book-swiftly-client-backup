@@ -73,9 +73,7 @@ const Navbar = () => {
       <div className="navbar-end">
        <Link to="/dashboard/cart">
         <button className="btn btn-outline btn-primary lg:mr-4">
-          <span className=" text-3xl"><TbBrandBooking /></span>
           My Bookings
-          <div className="badge badge-secondary">+{cart.length}</div>
         </button>
        </Link>
         {user ? (
