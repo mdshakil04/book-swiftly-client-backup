@@ -15,15 +15,15 @@ const CheckoutFrom = () => {
     if (card === null) {
       return;
     }
-    if (error) {
-      console.log("Payment Error", error);
-    } else {
-      console.log("Payment Method", paymentMethod);
-    }
     const { error, paymentMethod } = await stripe.createPaymentMethod({
         type: 'card',
         card
     })
+    if (error) {
+        console.log("Payment Error", error);
+      } else {
+        console.log("Payment Method", paymentMethod);
+      }
   };
   return (
     <from onSubmit={handleSubmit}>
