@@ -5,7 +5,7 @@ import Festival from './Festival';
 const FestivalContainer = () => {
     const [festival, setFestival] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('http://https://book-swiftly-server.vercel.app/services')
         .then(res => res.json())
         .then(data => {
             const stayItems = data.filter(item => item.category === 'festivals')

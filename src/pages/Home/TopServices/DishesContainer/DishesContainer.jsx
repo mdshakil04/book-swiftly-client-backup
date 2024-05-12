@@ -5,7 +5,7 @@ import Dishes from './Dishes';
 const DishesContainer = () => {
     const [dishes, setDishes] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('http://https://book-swiftly-server.vercel.app/services')
         .then(res => res.json())
         .then(data => {
             const stayItems = data.filter(item => item.category === 'dishes')

@@ -3,7 +3,7 @@ import axios from 'axios';
 import React from 'react';
 
 const axiosPublic = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'http://https://book-swiftly-server.vercel.app'
 })
 const useAxiosPublic = () => {
     return axiosPublic;

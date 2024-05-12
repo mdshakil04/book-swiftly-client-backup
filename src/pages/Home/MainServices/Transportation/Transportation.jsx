@@ -5,7 +5,7 @@ const Transportation = () => {
   const [transport , setTransport] = useState([]);
   // const axiosSecure = useAxiosSecure()
   useEffect(()=>{
-    fetch('http://localhost:5000/mainServices')
+    fetch('http://https://book-swiftly-server.vercel.app/mainServices')
      .then(res => res.json())
      .then(data => {
       const transports = data.filter(item => item.category === 'transport')
